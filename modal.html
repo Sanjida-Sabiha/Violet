@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+<!-- Sign In Modal -->
+<div id="signInModal" class="modal hidden fixed inset-0 overflow-auto bg-primaryColor bg-opacity-50 z-50">
+    <div class="modal-content relative z-[999] bg-white md:w-[630px] w-[92%] mx-auto rounded-30px md:p-8 p-5 mt-20">
+        <div class="flex justify-between items-center">
+            <h2 class="font-NeueMontreal font-medium text-28xl leading-11 text-primaryColor">Welcome!</h2>
+            <div class="bg-SecondaryColor bg-opacity-25 md:w-10 w-7 md:h-10 h-7 rounded-full md:p-3 p-2">
+                <a href="#" onclick="closeModal('signInModal'); return false;"><img src="assets/img/close.svg" alt=""></a>
+            </div>
+        </div>
+        <p class="text-SecondaryColor font-NeueMontreal font-normal text-lg leading-8 pt-3.5">Sign in to your account to get started!</p>
+        <div class="mt-10">
+            <a href="#" onclick="event.preventDefault();" class="w-full h-14 border border-SecondaryColor border-opacity-20 rounded-30px flex justify-center items-center gap-2 font-NeueMontreal font-normal text-lg leading-8 text-SecondaryColor">
+                <img src="assets/img/google.svg" alt="">Sign in with Google
+            </a>
+        </div>
+        <div class="flex items-center py-7">
+            <hr class="w-full text-SecondaryColor opacity-80">
+            <p class="md:px-4 px-2 font-NeueMontreal text-lg leading-30 font-normal text-center text-SecondaryColor">OR</p>
+            <hr class="w-full text-SecondaryColor opacity-80">
+        </div>
+        <div>
+            <form>
+                <label class="block mb-3 font-NeueMontreal font-medium text-lg leading-8 text-primaryColor">Email address</label>
+                <input class="w-full h-14 border border-SecondaryColor border-opacity-20 text-secondaryColor py-4 pl-4 rounded-30px placeholder:text-secondaryColor placeholder:text-left placeholder:text-lg placeholder:leading-8 focus:outline-none" type="text" placeholder="Email address">
+                <label class="block mt-4 mb-3 font-NeueMontreal font-medium text-lg leading-8 text-primaryColor">Password</label>
+                <input class="w-full h-14 border border-SecondaryColor border-opacity-20 text-secondaryColor py-4 pl-4 rounded-30px placeholder:text-secondaryColor placeholder:text-left placeholder:text-lg placeholder:leading-8 focus:outline-none" type="password" placeholder="Password">
+            </form>
+            <a href="#" onclick="openModal('forgotPasswordModal'); closeModal('signInModal'); return false;" class="pt-4 block font-NeueMontreal font-medium text-base leading-7 text-right text-btnBg hover:underline">Forgot password?</a>
+            <p class="pt-7 text-center font-NeueMontreal font-normal text-base leading-7 text-secondaryColor">Don’t have an account? <a href="#" onclick="openModal('signUpModal'); closeModal('signInModal'); return false;" class="font-medium text-btnBg"> Sign up</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Sign Up Modal -->
+<div id="signUpModal" class="modal hidden fixed inset-0 overflow-auto bg-primaryColor bg-opacity-50 z-50 ">
+    <div class="modal-content relative bg-white md:w-[630px] w-[92%] mx-auto rounded-30px md:p-8 p-5 mt-40">
+        <div class="flex justify-between items-center">
+            <h2 class="font-NeueMontreal font-medium text-28xl leading-11 text-primaryColor">Let’s Get Started</h2>
+            <div class="bg-SecondaryColor bg-opacity-25 md:w-10 w-7 md:h-10 h-7 rounded-full md:p-3 p-2">
+                <a href="#" onclick="closeModal('signUpModal'); return false;"><img src="assets/img/close.svg" alt=""></a>
+            </div>
+        </div>
+        <p class="text-SecondaryColor font-NeueMontreal font-normal text-lg leading-8 pt-3.5">Sign up to your account to get started!</p>
+        <div class="mt-10">
+            <a href="#" onclick="event.preventDefault();" class="w-full h-14 border border-SecondaryColor border-opacity-20 rounded-30px flex justify-center items-center gap-2 font-NeueMontreal font-normal text-lg leading-8 text-SecondaryColor">
+                <img src="assets/img/google.svg" alt="">Sign in with Google
+            </a>
+        </div>
+        <div class="flex items-center py-7">
+            <hr class="w-full text-SecondaryColor opacity-80">
+            <p class="md:px-4 px-2 font-NeueMontreal text-lg leading-30 font-normal text-center text-SecondaryColor">OR</p>
+            <hr class="w-full text-SecondaryColor opacity-80">
+        </div>
+        <div>
+            <form>
+                <label class="block mb-3 font-NeueMontreal font-medium text-lg leading-8 text-primaryColor">Name</label>
+                <input class="w-full h-14 border border-SecondaryColor border-opacity-20 text-secondaryColor py-4 pl-4 rounded-30px placeholder:text-secondaryColor placeholder:text-left placeholder:text-lg placeholder:leading-8 focus:outline-none" type="text" placeholder="Your full name">
+                <label class="block mt-4 mb-3 font-NeueMontreal font-medium text-lg leading-8 text-primaryColor">Email address</label>
+                <input class="w-full h-14 border border-SecondaryColor border-opacity-20 text-secondaryColor py-4 pl-4 rounded-30px placeholder:text-secondaryColor placeholder:text-left placeholder:text-lg placeholder:leading-8 focus:outline-none" type="text" placeholder="Email address">
+                <label class="block mt-4 mb-3 font-NeueMontreal font-medium text-lg leading-8 text-primaryColor">Password</label>
+                <input class="w-full h-14 border border-SecondaryColor border-opacity-20 text-secondaryColor py-4 pl-4 rounded-30px placeholder:text-secondaryColor placeholder:text-left placeholder:text-lg placeholder:leading-8 focus:outline-none" type="password" placeholder="Password">
+                <button onclick="event.preventDefault();" class="w-full mt-7 text-lg leading-8 font-NeueMontreal block font-medium text-white px-11 py-4 border border-btnBg bg-btnBg rounded-100px hover:border-primaryColor hover:bg-opacity-20 hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500">Create Account</button>
+            </form>
+            <p class="pt-7 text-center font-NeueMontreal font-normal text-base leading-7 text-secondaryColor">Already have an account? <a href="#" onclick="openModal('signInModal'); closeModal('signUpModal'); return false;" class="font-medium text-btnBg"> Log in</a></p>
+        </div>
+    </div>
+</div>
+
+<!-- Forgot Password Modal -->
+<div id="forgotPasswordModal" class="modal hidden fixed inset-0 overflow-auto bg-primaryColor bg-opacity-50 z-50 ">
+    <div class="modal-content relative bg-white md:w-[630px] w-[92%] mx-auto rounded-30px md:p-8 p-5 mt-40">
+        <div class="flex justify-between items-center">
+            <h2 class="font-NeueMontreal font-medium md:text-28xl text-2xl leading-11 text-primaryColor">Forgot Your Password?</h2>
+            <div class="bg-SecondaryColor bg-opacity-25 md:w-10 w-7 md:h-10 h-7 rounded-full md:p-3 p-2">
+                <a href="#" onclick="closeModal('forgotPasswordModal'); return false;"><img src="assets/img/close.svg" alt=""></a>
+            </div>
+        </div>
+        <p class="text-SecondaryColor font-NeueMontreal font-normal md:text-lg text-base md:leading-8 leading-7 pt-3.5">No worries, we'll send you an email with instructions to reset your password. You will find your account safe!</p>
+        <div>
+            <form>
+                <label class="block mt-7 mb-3 font-NeueMontreal font-medium text-lg leading-8 text-primaryColor">Email address</label>
+                <input class="w-full h-14 border border-SecondaryColor border-opacity-20 text-secondaryColor py-4 pl-4 rounded-30px placeholder:text-secondaryColor placeholder:text-left placeholder:text-lg placeholder:leading-8 focus:outline-none" type="text" placeholder="Email address">
+                <button onclick="event.preventDefault();" class="w-full mt-7 text-lg leading-8 font-NeueMontreal block font-medium text-white px-11 py-4 border border-btnBg bg-btnBg rounded-100px hover:border-primaryColor hover:bg-opacity-20 hover:text-primaryColor hover:transition hover:ease-in-out hover:duration-500">Send Instructions</button>
+            </form>
+            <p class="pt-7 text-center font-NeueMontreal font-normal text-base leading-7 text-secondaryColor">Back to <a href="#" onclick="openModal('signInModal'); closeModal('forgotPasswordModal'); return false;" class="font-medium text-btnBg"> Log in</a></p>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>
